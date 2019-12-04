@@ -1,0 +1,298 @@
+@import "../partials/mixins";
+@import '../partials/variables-main-page';
+
+.about {
+  font-size: 18px;
+  line-height: 21px;
+
+  &__title {
+    @include block-title('desktop');
+    margin-bottom: $step-indent * 2;
+
+    @include tablet {
+      @include block-title('tablet');
+    }
+
+    @include mobile {
+      @include block-title('mobile');
+      margin-bottom: $step-indent-mini * 2;
+    }
+  }
+
+  &__team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: $step-indent * 2;
+
+    @include mobile {
+      margin-bottom: $step-indent-mini;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex-basis: 20%;
+
+    @include mobile {
+      flex-basis: 50%;
+      margin-bottom: 34px;
+    }
+  }
+
+  &__number {
+    position: absolute;
+    top: 29%;
+    font-weight: bold;
+
+    @include tablet {
+      top: 26%;
+    }
+
+    @include mobile {
+      top: 26%;
+    }
+  }
+
+  &__text {
+    font-weight: bold;
+
+    @include desktop {
+      max-width: 50%;
+      margin-top: -9px;
+
+      &_prog,
+      &_guru {
+        text-align: right;
+        margin-left: 50px;
+      }
+
+      &_prog {
+        min-width: 60%;
+      }
+
+      &_smm {
+        margin-top: 11px;
+      }
+
+      &_design {
+        margin-right: 110px;
+      }
+    }
+
+    @include tablet {
+      max-width: 100%;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    @include mobile {
+      max-width: 100%;
+      font-size: 16px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    margin: 0 40px 32px 0;
+
+
+    @include mobile {
+      margin: 0 10px 32px 0;
+      font-size: 14px;
+    }
+
+
+    &::after {
+      content: '';
+      position: absolute;
+      opacity: 0;
+      width: 100%;
+      height: 1px;
+      bottom: -8px;
+      left: 0;
+      z-index: 1;
+      background-color: $red;
+      transition: opacity .2s linear;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+
+  &__link {
+    color: $black;
+  }
+
+  &__carousel {
+    display: flex;
+
+    @include desktop {
+      height: 280px;
+      margin-bottom: 78px !important;
+
+      &_tablet {
+        display: none;
+      }
+    }
+
+    @include tablet {
+      height: 226px;
+      margin-bottom: 40px !important;
+
+      &_desktop {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      height: 260px;
+      margin-bottom: 40px !important;
+
+      &_desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__image-item {
+    position: relative;
+    height: 100%;
+
+    @include desktop {
+      width: 562px;
+    }
+  }
+
+  &__image-carousel,
+  &__image-item {
+    margin: 0 20px;
+
+   @include desktop {
+     height: 248px;
+   }
+
+    @include tablet {
+      margin: 0 10px;
+
+      &_min,
+      &_max {
+        max-height: 206px;
+      }
+    }
+  }
+
+  &__image-carousel {
+
+    @include desktop {
+      width: 258px;
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 304px;
+    height: 100%;
+    background: $blue;
+    color: $white;
+    padding: 33px 45px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  &__city {
+    font-size: 14px;
+    margin-bottom: 35px;
+  }
+
+  &__button-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 115px;
+
+    @include mobile {
+      margin-bottom: $step-indent * 2;
+    }
+  }
+
+  &__button {
+    @include btn-transparent(20px, 75px, 18px, $black, $blue);
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 30%;
+  height: 60px;
+  width: 60px;
+  z-index: 1;
+  cursor: pointer;
+  background-color: $white;
+}
+
+@include desktop {
+  .prev {
+    left: -8%;
+  }
+
+  .next {
+    right: -8%;
+  }
+}
+
+@include tablet {
+  .prev,
+  .next {
+    border: 1px solid #ececec;
+  }
+
+  .prev {
+    left: -2%;
+  }
+
+  .next {
+    right: -2%;
+  }
+}
+
+@include mobile {
+  .prev,
+  .next {
+    border: 1px solid #ececec;
+  }
+
+  .prev {
+    left: -4%;
+  }
+
+  .next {
+    right: -4%;
+  }
+}
+

@@ -1,0 +1,181 @@
+@import "../partials/mixins";
+@import '../partials/variables-main-page';
+
+.service {
+
+  &__wrap {
+
+    @include desktop {
+      height: 460px;
+      background: url(../assets/images/main-page/services/bcg.jpg) no-repeat;
+      background-size: cover;
+      margin-bottom: $step-indent * 4;
+    }
+
+    @include tablet {
+      margin-bottom: $step-indent * 3;
+    }
+
+    @include mobile {
+      margin-bottom: 36px;
+    }
+  }
+
+  &__title {
+
+    @include block-title('desktop');
+    margin-bottom: $step-indent * 2;
+
+    @include tablet {
+      @include block-title('tablet');
+      margin-bottom: 48px;
+    }
+
+    @include mobile {
+      @include block-title('mobile');
+      margin-bottom: 24px;
+    }
+  }
+
+  &__container {
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+
+    @include desktop {
+      height: 100%;
+      margin-left: 300px;
+      padding: 60px 0 0;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+
+    @include desktop {
+      width: 40%;
+      margin-bottom: 40px;
+    }
+
+    @include tablet {
+      width: 40%;
+      margin-bottom: 60px;
+    }
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__item-title {
+    position: relative;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+
+    @include desktop {
+      margin-bottom: 12px;
+    }
+
+    @include tablet {
+      margin-bottom: 24px;
+    }
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 21px;
+      margin-bottom: 10px;
+    }
+
+    &:before,
+    &:after {
+      font-family: 'Ultra', serif;
+      position: absolute;
+
+      @include tablet {
+        z-index: -10;
+        font-size: 144px;
+        color: #FFBE5A;
+        opacity: 0.4;
+      }
+    }
+
+    &:before {
+
+      @include desktop {
+        content: '';
+        background: url(../assets/images/main-page/services/bullet.png);
+        background-size: cover;
+        width: 24px;
+        height: 24px;
+        left: -36px;
+        top: 8%;
+      }
+    }
+
+    &_one {
+      &:before {
+
+        @include tablet {
+          content: '01';
+          left: -42%;
+          top: 138%;
+        }
+      }
+    }
+
+    &_two {
+      &:after {
+
+        @include tablet {
+          content: '02';
+          right: -20%;
+          top: 200%;
+        }
+      }
+    }
+
+    &_three {
+      &:before {
+
+        @include tablet {
+          content: '03';
+          left: -42%;
+          top: 138%;
+        }
+      }
+    }
+
+    &_four {
+      &:after {
+
+        @include tablet {
+          content: '04';
+          right: -20%;
+          top: 138%;
+        }
+      }
+    }
+  }
+
+  &__item-text {
+    font-size: 14px;
+    line-height: 28px;
+
+    @include mobile {
+      line-height: 16px;
+    }
+  }
+}

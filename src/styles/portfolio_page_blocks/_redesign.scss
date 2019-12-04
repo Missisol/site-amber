@@ -1,0 +1,124 @@
+@import "../partials/mixins";
+@import '../partials/variables-main-page';
+
+.redesign {
+  margin-bottom: $step-indent * 4;
+
+  @include mobile {
+    margin-bottom: 0;
+  }
+
+  &__subtitle {
+    @include desktop {
+      &_mobile {
+        display: none;
+      }
+    }
+
+    @include tablet {
+      &_mobile {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      &_desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__slider {
+    @include desktop {
+      &_mobile {
+        display: none;
+      }
+    }
+
+    @include tablet {
+
+      &_mobile {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      margin-bottom: $step-indent * 2 !important;
+
+      &_desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__image {
+
+    @include desktop {
+      height: 482px;
+      margin: 0 19px;
+    }
+
+    @include tablet {
+      width: 519px;
+      height: 482px;
+      margin-right: 20px;
+    }
+
+    @include mobile {
+      width: 204px;
+      height: 183px;
+      margin-right: 20px;
+    }
+  }
+
+  &__prev,
+  &__next {
+    position: absolute;
+    top: 45%;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  @include desktop {
+    &__prev {
+      left: -8%;
+    }
+
+    &__next {
+      right: -8%;
+    }
+  }
+
+  @include tablet {
+    &__prev,
+    &__next {
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &__prev {
+      left: -3%;
+    }
+
+    &__next {
+      right: -3%;
+    }
+  }
+
+  @include mobile {
+    &__prev,
+    &__next {
+      width: 34px;
+      height: 34px;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &__prev {
+      left: 10%;
+    }
+
+    &__next {
+      right: 10%;
+    }
+  }
+}
+

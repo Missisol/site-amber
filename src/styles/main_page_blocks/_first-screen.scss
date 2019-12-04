@@ -1,0 +1,178 @@
+@import "../partials/mixins";
+@import '../partials/variables-main-page';
+
+.first-wrap {
+  margin-bottom: $step-indent * 4;
+
+  @include tablet {
+    margin-bottom: $step-indent * 3;
+  }
+
+  @include mobile {
+    margin-top: $mobile-header-height;
+    margin-bottom: $step-indent * 2;
+  }
+}
+
+.first {
+  padding-top: 140px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include tablet {
+    padding-top: $step-indent * 3;
+  }
+
+  @include mobile {
+    padding-top: 36px;
+  }
+
+  &__image {
+    position: absolute;
+    z-index: -10;
+
+    @include desktop {
+
+      &_one {
+        top: 42%;
+        left: 43%;
+      }
+
+      &_two {
+        top: 36%;
+        left: 20%;
+      }
+
+      &_three {
+        right: 20%;
+        top: 25%;
+      }
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-size: $big-title-font-size;
+    line-height: $big-title-line-height;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:after {
+      content: '.';
+      position: absolute;
+      right: -23px;
+      bottom: 0;
+
+      @include tablet {
+        right: -16px;
+      }
+
+      @include mobile {
+        right: -6px;
+      }
+    }
+
+    &_one {
+      color: $red;
+      animation: appearance 1.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) .4s both;
+
+      &:after {
+        color: $black;
+      }
+    }
+
+    &_two {
+      animation: appearance 1.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) .8s both;
+
+      &:after {
+        color: $red;
+      }
+    }
+
+    &_three {
+      animation: appearance 1.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.2s both;
+    }
+
+
+    @include tablet {
+      font-size: 64px;
+      line-height: 87px;
+    }
+
+    @include mobile {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+
+  &__buttons-block {
+    margin-top: $step-indent * 2;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include tablet {
+      margin-top: $step * 3;
+      //justify-content: space-between;
+    }
+
+    @include mobile {
+      margin-top: $step-indent-mini;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+
+    &_dark {
+      @include btn-colored(20px, 65px, 18px, $background-color: $blue);
+    }
+
+    &_light {
+      @include btn-transparent(20px, 65px, 18px, $blue, $blue);
+      margin-left: 30px;
+    }
+
+    @include tablet {
+      &_dark {
+        @include btn-colored(20px, 58px, 18px, $background-color: $blue);
+      }
+
+      &_light {
+        @include btn-transparent(20px, 50px, 18px, $blue, $blue);
+        margin-left: 20px;
+      }
+    }
+
+    @include mobile {
+      &_dark {
+        @include btn-colored-mobile(10px, 0, 14px, $background-color: $blue);
+        width: 100%;
+      }
+
+      &_light {
+        @include btn-transparent-mobile(10px, 0, 14px, $blue, $blue);
+        width: 100%;
+        margin: 10px 0 0;
+      }
+    }
+  }
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

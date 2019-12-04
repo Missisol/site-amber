@@ -1,0 +1,20 @@
+@import "../partials/mixins";
+@import '../partials/variables-main-page';
+
+.tasks {
+  &__bcg {
+    height: 569px;
+    background: url(../assets/images/portfolio-page/tasks/pic-bcg.jpg) center center no-repeat;
+    background-size: cover;
+    margin-bottom: $step-indent * 4;
+
+    @include tablet {
+      height: 474px;
+    }
+
+    @include mobile {
+      height: 198px;
+      margin-bottom: $step-indent * 2;
+    }
+  }
+}

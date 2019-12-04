@@ -1,0 +1,181 @@
+@import "../partials/mixins";
+@import '../partials/variables-main-page';
+
+.company {
+  display: flex;
+  flex-direction: column;
+  padding-top: $step-indent * 3;
+  margin-bottom: $step-indent * 4;
+
+  @include tablet {
+    margin-bottom: 0;
+  }
+
+  @include mobile {
+    padding-top: 84px;
+    margin-bottom: 0;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $step-indent * 3;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 34px;
+    }
+  }
+
+  &__year {
+    font-size: 104px;
+    font-weight: bold;
+    color: $color-year;
+    letter-spacing: 0.025em;
+
+    @include mobile {
+      font-size: 64px;
+      line-height: 74px;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__buttons-block {
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+    }
+  }
+
+  &__button {
+    padding: 7px 35px;
+    text-align: center;
+
+    @include tablet {
+      padding: 7px 28px;
+      font-size: 14px;
+    }
+
+    @include mobile {
+      padding: 7px 21px;
+      font-size: 14px;
+    }
+
+    &_price {
+      background: $color-button-yellow;
+      margin-bottom: 14px;
+
+      @include tablet {
+        margin-bottom: 9px;
+      }
+    }
+
+    &_state {
+      background: $color-button-green;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: $step-indent * 4;
+
+    @include mobile {
+      font-size: 24px;
+      line-height: 29px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__slider {
+
+    @include desktop {
+      &_tablet {
+        display: none;
+      }
+    }
+
+    @include tablet {
+      margin-bottom: 120px !important;
+      &_desktop {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      margin-bottom: $step-indent * 2 !important;
+
+      &_desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__image {
+    margin: 0 19px;
+
+    @include tablet {
+      width: 362px;
+      margin: 0 15px;
+    }
+
+    @include mobile {
+      width: 148px;
+      margin: 0 10px;
+    }
+  }
+
+  &__prev,
+  &__next {
+    position: absolute;
+    top: 45%;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  @include desktop {
+    &__prev {
+      left: -8%;
+    }
+
+    &__next {
+      right: -8%;
+    }
+  }
+
+  @include tablet {
+    &__prev,
+    &__next {
+      top: 33%;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &__prev {
+      left: 6%;
+    }
+
+    &__next {
+      right: 6%;
+    }
+  }
+
+  @include mobile {
+    &__prev,
+    &__next {
+      width: 34px;
+      height: 34px;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &__prev {
+      left: 10%;
+    }
+
+    &__next {
+      right: 10%;
+    }
+  }
+}
+

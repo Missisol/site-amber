@@ -1,0 +1,52 @@
+@import 'variables';
+
+// Indents
+$step-indent: 30px;
+$step-indent-mini: 20px;
+
+$color-year: #FFE4BA;
+$color-button-yellow: #FFE4BA;
+$color-button-green: #D5E6B1;
+
+@mixin block-title($version) {
+  position: relative;
+  font-weight: bold;
+
+  &:before {
+    content: '';
+    position: absolute;
+    background: $red;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+
+  @if $version =='desktop' {
+    font-size: 64px;
+    line-height: 74px;
+
+    &:before {
+      left: -45px;
+      top: 46%;
+    }
+  } @else if $version == 'tablet' {
+    font-size: 64px;
+    line-height: 74px;
+
+    &:before {
+      left: -27px;
+      top: 46%;
+    }
+  } @else if $version == 'mobile' {
+    font-size: 24px;
+    line-height: 26px;
+
+    &:before {
+      width: 8px;
+      height: 8px;
+      left: -15px;
+      top: 40%;
+    }
+  }
+}
+

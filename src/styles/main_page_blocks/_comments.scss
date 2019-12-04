@@ -1,0 +1,293 @@
+@import "../partials/mixins";
+@import '../partials/variables-main-page';
+
+.comments {
+
+  @include desktop {
+    height: 458px;
+    background: url(../assets/images/main-page/comments/bcg.png) no-repeat;
+    background-size: cover;
+    margin-bottom: 189px;
+  }
+
+  @include tablet {
+    height: 458px;
+    background: url(../assets/images/main-page/comments/bcg.png) no-repeat;
+    background-size: cover;
+    margin-bottom: 100px;
+  }
+
+  @include mobile {
+    margin-bottom: 84px;
+  }
+
+  &__container {
+    height: 100%;
+    position: relative;
+
+    @include desktop {
+      padding-top: 100px;
+    }
+
+    @include tablet {
+      padding-top: 64px;
+    }
+  }
+
+  &__quotes {
+    position: absolute;
+
+    @include desktop {
+      &_left {
+        top: -40px;
+        left: 180px;
+      }
+
+      &_right {
+        bottom: -40px;
+        right: 0;
+      }
+    }
+
+    @include tablet {
+      width: 90px;
+
+      &_left {
+        top: -40px;
+        left: 5%;
+      }
+
+      &_right {
+        bottom: -40px;
+        right: 5%;
+      }
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__title {
+
+    @include desktop {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      @include block-title('mobile');
+      margin-bottom: 48px;
+    }
+  }
+
+  &__carousel {
+
+    @include tablet {
+      margin: 0 auto;
+      //width: 700px;
+      //height: 345px;
+    }
+  }
+
+  &__slide {
+    display: flex !important;
+    justify-content: space-between;
+
+    @include desktop {
+      width: 1164px;
+      height: 287px;
+    }
+
+    @include tablet {
+      width: 700px;
+      height: 345px;
+      padding: 0 32px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__person {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      width: 225px;
+    }
+
+    @include tablet {
+      width: 180px;
+      padding-top: 32px;
+    }
+
+    @include mobile {
+      align-items: center;
+    }
+  }
+
+
+  &__photo {
+    margin-bottom: 20px;
+
+    @include tablet {
+      width: 155px;
+      height: 155px;
+    }
+
+    @include mobile {
+      width: 115px;
+      height: 115px;
+    }
+  }
+
+  &__caption {
+    text-align: center;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include desktop {
+      width: 66%;
+    }
+
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &__subtitle {
+
+    @include desktop {
+      @include block-title('desktop');
+      font-size: 18px;
+      line-height: 21px;
+      margin-bottom: 34px;
+    }
+
+    @include tablet {
+      @include block-title('tablet');
+      font-size: 18px;
+      line-height: 21px;
+      margin-bottom: 24px;
+    }
+
+    @include mobile {
+      //@include block-title('mobile');
+      //margin-bottom: $step-indent-mini * 2;
+      display: none;
+    }
+
+    &:before {
+      left: -34px;
+      top: 10%;
+    }
+  }
+
+  &__text {
+    @include desktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: $black;
+    font-weight: bold;
+    line-height: 40px;
+
+    &:after {
+      content: '';
+      background: url(../assets/images/main-page/comments/arrow.svg);
+      background-size: cover;
+      position: absolute;
+
+      @include desktop {
+        width: 18px;
+        height: 14px;
+        top: 37%;
+        right: -20px;
+      }
+
+      @include tablet {
+        width: 18px;
+        height: 14px;
+        top: 37%;
+        right: -20px;
+      }
+
+      @include mobile {
+        width: 14px;
+        height: 10px;
+        top: 37%;
+        right: -20px;
+      }
+    }
+
+    @include desktop {
+      &_tablet {
+        display: none;
+      }
+    }
+
+    @include tablet {
+      margin-top: 12px;
+
+      &_desktop {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      align-self: flex-start;
+      margin: 16px 0 24px;
+
+      &_desktop {
+        display: none;
+      }
+    }
+  }
+}
+
+.prev-comments,
+.next-comments {
+  background-color: transparent;
+  border: none;
+}
+
+@include tablet {
+  .prev-comments {
+    left: -4%;
+  }
+
+  .next-comments {
+    right: -4%;
+  }
+}
+
+@include mobile {
+  .prev-comments,
+  .next-comments {
+    width: 20px;
+    height: 20px;
+    top: 7%;
+  }
+
+  .prev-comments {
+    left: -4%;
+  }
+
+  .next-comments {
+    right: -4%;
+  }
+}
+
+

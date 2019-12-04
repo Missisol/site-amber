@@ -1,0 +1,71 @@
+@import "../partials/mixins";
+@import '../partials/variables-main-page';
+
+.social-job {
+
+  &__subtitle {
+    @include desktop {
+      &_tablet {
+        display: none;
+      }
+    }
+
+    @include tablet {
+      &_desktop {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      &_desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__text {
+    min-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+
+    @include mobile {
+      justify-content: center;
+    }
+  }
+
+  &__icon {
+    margin-right: 18px;
+
+    @include desktop {
+      width: 31px;
+    }
+
+    @include tablet {
+      width: 24px;
+    }
+
+    @include mobile {
+      width: 24px;
+    }
+  }
+
+  &__bcg {
+    height: 625px;
+    background: url(../assets/images/portfolio-page/social-job/iphone.jpg) center center no-repeat;
+    background-size: cover;
+    margin-bottom: $step-indent * 4;
+
+    @include tablet {
+      height: 421px;
+    }
+
+    @include mobile {
+      height: 172px;
+      margin-bottom: $step-indent * 2;
+    }
+  }
+}

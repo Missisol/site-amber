@@ -1,0 +1,154 @@
+@import 'variables';
+
+//Headers
+@mixin _h1 {
+  font-weight: bold;
+  font-size: $h1-font-size;
+  line-height: $h1-line-height;
+}
+
+@mixin _h2 {
+  font-weight: bold;
+  font-size: $h2-font-size;
+  line-height: $h2-line-height;
+}
+
+@mixin _h3 {
+  font-weight: bold;
+  font-size: $h3-font-size;
+  line-height: $h3-line-height;
+}
+
+// Headers mobile
+@mixin _h1-mobile {
+  font-weight: bold;
+  font-size: $h1-mobile-font-size;
+  line-height: $h1-mobile-line-height;
+}
+
+@mixin _h2-mobile {
+  font-weight: bold;
+  font-size: $h2-mobile-font-size;
+  line-height: $h2-mobile-line-height;
+}
+
+@mixin _h3-mobile {
+  font-weight: bold;
+  font-size: $h3-mobile-font-size;
+  line-height: $h3-mobile-line-height;
+}
+
+// Base text
+@mixin base-text {
+  font-weight: normal;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  /* identical to box height */
+  letter-spacing: 0.025em;
+}
+
+//Base text mobile
+@mixin base-text-mobile {
+  font-weight: normal;
+  font-size: $light-mobile-font-size;
+  line-height: $base-mobile-line-height;
+}
+
+// Buttons text
+@mixin btn-text {
+  font-weight: 300;
+  font-size: $base-font-size;
+  line-height: $btn-line-height;
+}
+
+@mixin budget-btn-text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: $light-text-font-size;
+  line-height: $btn-line-height;
+}
+
+// Mixins for media
+@mixin desktop {
+  @media screen and (min-width: $desktop-width) {
+    @content
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-width) and (max-width: $desktop-width - 1px) {
+    @content
+  }
+}
+
+@mixin mobile {
+  @media screen and (min-width: $mobile-width) and (max-width: $tablet-width - 1px) {
+    @content
+  }
+}
+
+// Budget and status blocks
+@mixin budget-status-block($color) {
+  @include budget-btn-text;
+  text-align: center;
+  width: 164px;
+  height: 30px;
+  background-color: $color;
+}
+
+// Buttons
+@mixin btn($top, $left, $size, $text-color:#{$red},$background-color:#{$red}) {
+  font-size: $size;
+  font-weight: bold;
+  text-align: center;
+  color: $text-color;
+  border: 1px solid $background-color;
+  padding: $top $left;
+  cursor: pointer;
+  transition: .4s;
+}
+
+@mixin btn-transparent($top, $left, $size, $text-color:#{$red},$background-color:#{$red}) {
+  @include btn($top, $left, $size, $text-color, $background-color);
+  background-color: transparent;
+  &:hover {
+    color: white;
+    background-color: $background-color;
+  }
+}
+
+@mixin btn-transparent-mobile($top, $left, $size, $text-color:#{$red},$background-color:#{$red}) {
+  @include btn($top, $left, $size, $text-color, $background-color);
+  background-color: transparent;
+}
+
+@mixin btn-colored($top, $left, $size, $text-color:#{$white},$background-color:#{$red}) {
+  @include btn($top, $left, $size, $text-color, $background-color);
+  background-color: $background-color;
+  &:hover {
+    @if $background-color==$blue {
+      color: $black
+    } @else {
+      color: $background-color;
+    }
+    background-color: transparent;
+  }
+}
+
+@mixin btn-colored-mobile($top, $left, $size, $text-color:#{$white},$background-color:#{$red}) {
+  @include btn($top, $left, $size, $text-color, $background-color);
+  background-color: $background-color;
+}
+
+@mixin btn-mobile-default($color:#{$red},$color-hover:#{$dark-red}) {
+  @include btn-text;
+  text-align: center;
+  background-color: $color;
+  color: $white;
+  width: 260px;
+  height: 60px;
+  cursor: pointer;
+  &:hover {
+    background-color: $color-hover;
+  }
+}

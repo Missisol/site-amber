@@ -1,0 +1,15 @@
+@import "../partials/mixins";
+@import '../partials/variables-main-page';
+
+.techno {
+  margin-bottom: $step-indent * 4;
+
+  @include mobile {
+    margin-bottom: $step-indent * 2;
+  }
+
+  &__item {
+    font-weight: bold;
+    line-height: 27px;
+  }
+}

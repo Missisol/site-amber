@@ -1,0 +1,37 @@
+@import "../partials/mixins";
+@import '../partials/variables-main-page';
+
+.visual {
+
+  &__subtitle {
+
+    @include desktop {
+      &_tablet {
+        display: none;
+      }
+    }
+
+    @include tablet {
+      &_desktop {
+        display: none;
+      }
+    }
+    @include mobile {
+      &_desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__bcg {
+    height: 589px;
+    background: url(../assets/images/portfolio-page/visual/vis-bcg.jpg) center center no-repeat;
+    background-size: cover;
+    margin-bottom: $step-indent * 4;
+
+    @include mobile {
+      height: 246px;
+      margin-bottom: 34px;
+    }
+  }
+}
